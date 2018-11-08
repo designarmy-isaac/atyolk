@@ -1,0 +1,96 @@
+[contenteditable="true"]:focus {
+  outline: none;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+.group {
+  position: relative;
+  margin-bottom: rem-calc(45);
+}
+
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="password"],
+.custom-form input[type="date"],
+.custom-form input[type="number"],
+.custom-form input[type="search"],
+.custom-form input[type="url"],
+.custom-form input[type="tel"],
+.custom-form input[type="month"],
+.custom-form select {
+  border: none;
+  border-bottom: 1px solid $white;
+  background: none;
+  padding-left: .25rem;
+}
+.custom-form input[type="text"]:focus,
+.custom-form input[type="email"]:focus,
+.custom-form input[type="password"]:focus,
+.custom-form input[type="date"]:focus,
+.custom-form input[type="number"]:focus,
+.custom-form input[type="search"]:focus,
+.custom-form input[type="url"]:focus,
+.custom-form input[type="tel"]:focus,
+.custom-form input[type="month"]:focus,
+.custom-form select:focus {
+  outline: none;
+  border-bottom: 1px solid $primary-color;
+  background: none;
+}
+
+.custom-form label {
+  font-family: $accent-font-family;
+  color: inherit;
+  font-weight: 900;
+  position: absolute;
+  pointer-events: none;
+  left: rem-calc(5);
+  top: rem-calc(10);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* full state */
+.custom-form input.full ~ label,
+.custom-form select ~ label {
+  top: -1.25rem;
+  font-size: .9rem;
+}
+
+
+/* focused state */
+.custom-form input:focus ~ label,
+.custom-form select:focus ~ label {
+  top: -1.25rem;
+  font-size: .9rem;
+  color: $primary-color;
+}
+
+.custom-form .dropdown label {
+  width: 100%;
+}
+
+.custom-form .dropdown label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 2.25rem;
+  right: .5rem;
+  width: 0; 
+  height: 0; 
+  border-left: .4rem solid transparent;
+  border-right: .4rem solid transparent;
+  border-top: .4rem solid $white;
+}
+
+.custom-form .dropdown select:focus ~label::after {
+    border-top: .4rem solid $primary-color;
+}
+
+.custom-form .form-error {
+  position: absolute;
+  left: .35rem;
+  top: 3rem;
+}

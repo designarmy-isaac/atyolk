@@ -1,0 +1,40 @@
+$z-layers: (
+  bottomless-pit: -9999,
+  default: 1,
+  dropdown: 600,
+  thing: 400,
+  nav: 500,
+  splash: 600,
+  footer: 900,
+  modal: 1000
+);
+
+// _functions.scss
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+// usage
+.thing {
+  z-index: z(thing);
+}
+
+.fixed-nav {
+  z-index: z(nav);
+}
+
+#inquire-splash {
+  z-index: z(splash);
+}
+
+footer,
+.locations,
+.footer-form {
+  z-index: z(footer);
+  position: relative;
+}

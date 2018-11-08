@@ -1,0 +1,17 @@
+.faq {
+  dt {
+    &::before {
+      content: 'Q:';
+      display: block;
+      width: 2rem;
+    }
+  }
+  dd {
+    &::before {
+      content: 'A:';
+      display: block;
+      width: 2rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+#menu-button {
+  height: 3rem;
+  width: 3rem;
+  background: #ddd;
+  padding: .75rem;
+}
+
+#menu-icon {
+  transition: 1s;
+}
+
+#menu-icon.is-menu-icon {
+  background: red;
+  height: 2px;
+  width: 1.5rem;
+  line-height: 0;
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+//    background: $black;
+    height: 2px;
+    width: 1.5rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  &::before {
+    bottom: 6px;
+    background: blue;
+  }
+  &::after {
+    top: 4px;
+    background: green;
+  }
+}
+
+#menu-icon.is-close-icon {
+  
+}
